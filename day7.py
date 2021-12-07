@@ -1,14 +1,14 @@
 import os
 from numpy import *
 
-product_of_sums = lambda a: a * (a + 1) // 2
+sum_of_n = lambda n: n * (n + 1) // 2
 
 def get_optimum_fuel(positions, increasing_fuel):
     if not increasing_fuel:
         return int(sum(abs(positions - median(positions))))
     else:
-        lower_bound = sum(product_of_sums(abs(positions - floor(mean(positions)))))
-        upper_bound = sum(product_of_sums(abs(positions - ceil(mean(positions)))))
+        lower_bound = sum(sum_of_n(abs(positions - floor(mean(positions)))))
+        upper_bound = sum(sum_of_n(abs(positions - ceil(mean(positions)))))
         return int(min(lower_bound, upper_bound))
 
 def solve(name):
