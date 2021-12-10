@@ -1,8 +1,4 @@
 import os
-from collections import defaultdict
-
-def get_point():
-    return 
 
 def solve(name):
     dirname = os.path.dirname(__file__)
